@@ -12,10 +12,31 @@ function takeANumber (array,customerName){
     }
  }
 
+ let lineQueue = []
 
-
-
+ function line(katzLine) {
+     for (let i = 0; i > katzLine.length; i++) {
+         let customerEntry = katzLine[i];
+         lineQueue.push('' + [i + 1] + '.' + customerEntry)
+     }
+ if (katzLine.length === 0) {
+     return "The line is currently empty"
+     }
+ else lineupdate = line.slice(0, -2)
+     return "The line is currently:" + $(line)
+ }
  
+ 
+ function nowServing(katzLine) {
+     if (katzLine.length > 0) {
+       return"Currently serving " + katzLine.shift() + ".";
+     } else {
+         return "There is nobody waiting to be served!";
+     }
+   }
+
+
+
 
 
 // 2. Example Usage
