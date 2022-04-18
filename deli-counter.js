@@ -1,39 +1,65 @@
 // 1. Write your functions here
 const katzDeli = []
 
-
 function takeANumber (array,customerName){
     // Adding new name to the end of the array
     array.push(customerName)
-    for (let [index, customer] of array.entries()){
-        if (customer === customer.name){
-            console.log(`Welcome, ${customerName}. You are number ${index} in line.`)
-        }
-    }
+  console.log(`Welcome, ${customerName}. You are number ${array.indexOf(customerName)+1} in line.`)
+
  }
 
- let lineQueue = []
 
- function line(katzLine) {
-     for (let i = 0; i > katzLine.length; i++) {
-         let customerEntry = katzLine[i];
-         lineQueue.push('' + [i + 1] + '.' + customerEntry)
-     }
- if (katzLine.length === 0) {
-     return "The line is currently empty"
-     }
- else lineupdate = line.slice(0, -2)
-     return "The line is currently:" + $(line)
- }
- 
- 
- function nowServing(katzLine) {
-     if (katzLine.length > 0) {
-       return"Currently serving " + katzLine.shift() + ".";
-     } else {
-         return "There is nobody waiting to be served!";
-     }
-   }
+
+function line (arra){
+    // Adding new name to the end of the array
+  let str = 'The line is currently: '
+
+  if (arra.length>0) {
+    for (let i = 1; i<=arra.length; i++) 
+      {
+        str = str + i +"."+arra[i-1]+" "
+      }
+  console.log(str)
+  } else {
+  console.log("The line is currently empty.")
+  }
+}
+
+
+
+function nowServing (arra){
+    // Adding new name to the end of the array
+  if (arra.length>0) {
+      console.log("Currently serving " + arra[(arra.length-1)] )
+      arra.pop()
+  } else {
+  console.log("There is nobody waiting to be served!")
+  }
+}
+
+
+//Testing the code
+line(katzDeli)
+
+takeANumber(katzDeli,'Wilson')
+takeANumber(katzDeli,'Antony')
+takeANumber(katzDeli,'Willian')
+
+line(katzDeli)
+
+nowServing(katzDeli)
+line(katzDeli)
+
+
+
+//console.log(katzDeli[0])
+//console.log(katzDeli[1])
+//console.log(katzDeli[2])
+
+//delete katzDeli[0]
+//console.log(katzDeli[0])
+//console.log(katzDeli[1])
+//console.log(katzDeli[2])
 
 
 
